@@ -55,7 +55,7 @@ class WordsStrategy implements StrategyInterface
 
         foreach ($value as $wordEntityInfo) {
             $wordEntities[] = new Word(
-                $this->textPropertyStrategy->hydrate($wordEntityInfo['property']),
+                isset($wordEntityInfo['property']) ? $this->textPropertyStrategy->hydrate($wordEntityInfo['property']) : null,
                 $this->boundingPolyStrategy->hydrate($wordEntityInfo['boundingBox']),
                 $this->symbolsStrategy->hydrate($wordEntityInfo['symbols'])
             );

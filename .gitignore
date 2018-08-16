@@ -1,4 +1,9 @@
-/vendor
-phpunit.xml
-composer.lock
-/example
+log/*
+temp/*
+www/webtemp/*
+vendor/*
+!.gitignore
+!.htaccess
+!web.config
+app/config/config.local.neon
+.idea

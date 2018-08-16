@@ -20,11 +20,11 @@ class Paragraph
     protected $words = [];
 
     /**
-     * @param TextProperty $property
+     * @param TextProperty|null $property
      * @param BoundingPoly $boundingBox
      * @param Word[] $words
      */
-    public function __construct(TextProperty $property, BoundingPoly $boundingBox, array $words)
+    public function __construct(TextProperty $property = null, BoundingPoly $boundingBox, array $words)
     {
         $this->property = $property;
         $this->boundingBox = $boundingBox;

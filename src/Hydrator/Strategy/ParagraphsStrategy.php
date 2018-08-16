@@ -54,7 +54,7 @@ class ParagraphsStrategy implements StrategyInterface
 
         foreach ($value as $paragraphEntityInfo) {
             $paragraphEntities[] = new Paragraph(
-                $this->textPropertyStrategy->hydrate($paragraphEntityInfo['property']),
+                isset($paragraphEntityInfo['property']) ? $this->textPropertyStrategy->hydrate($paragraphEntityInfo['property']) : null,
                 $this->boundingPolyStrategy->hydrate($paragraphEntityInfo['boundingBox']),
                 $this->wordsStrategy->hydrate($paragraphEntityInfo['words'])
             );

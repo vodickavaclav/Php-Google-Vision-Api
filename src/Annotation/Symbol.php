@@ -20,11 +20,11 @@ class Symbol
     protected $text;
 
     /**
-     * @param TextProperty $property
+     * @param TextProperty|null $property
      * @param BoundingPoly $boundingBox
      * @param string $text
      */
-    public function __construct(TextProperty $property, BoundingPoly $boundingBox, $text)
+    public function __construct(TextProperty $property = null, BoundingPoly $boundingBox, $text)
     {
         $this->property = $property;
         $this->boundingBox = $boundingBox;
