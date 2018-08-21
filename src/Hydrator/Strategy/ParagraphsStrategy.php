@@ -65,13 +65,7 @@ class ParagraphsStrategy implements StrategyInterface
     {
         $paragraphEntities = [];
         foreach ($value as $paragraphEntityInfo) {
-<<<<<<< HEAD
-            $paragraphEntities[] = new Paragraph(
-                isset($paragraphEntityInfo['property']) ? $this->textPropertyStrategy->hydrate($paragraphEntityInfo['property']) : null,
-                $this->boundingPolyStrategy->hydrate($paragraphEntityInfo['boundingBox']),
-                $this->wordsStrategy->hydrate($paragraphEntityInfo['words'])
-            );
-=======
+
             $textProperty = isset($paragraphEntityInfo['property'])
                 ? $this->textPropertyStrategy->hydrate($paragraphEntityInfo['property'])
                 : null;
@@ -85,7 +79,6 @@ class ParagraphsStrategy implements StrategyInterface
                 : null;
 
             $paragraphEntities[] = new Paragraph($textProperty, $boundingBox, $words);
->>>>>>> 06e456eba0746fcb33ceb4d940d466f8875c7f1b
         }
 
         return $paragraphEntities;
